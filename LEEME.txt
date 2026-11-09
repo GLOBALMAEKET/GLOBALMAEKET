@@ -1,0 +1,48 @@
+# GLOBALMAEKET — primera entrega funcional
+
+## Cómo abrir
+1. Descomprime el ZIP.
+2. Abre la carpeta GLOBALMAEKET en Visual Studio Code.
+3. Abre `index.html` y ejecútalo con tu navegador (o usa la extensión Live Server).
+4. Para probar: añade productos, entra en Carrito, completa el formulario y registra un pedido.
+
+## Incluye
+- Inicio, categorías, buscador y catálogo.
+- Fichas de producto y productos relacionados.
+- Carrito con cantidades y eliminación.
+- Checkout con datos de entrega.
+- Pago por QR/transferencia con campo para comprobante y opción de efectivo.
+- Confirmación y consulta de pedidos.
+- Panel local para ver pedidos, revisar comprobantes y editar indicaciones de pago.
+- Diseño adaptable a móvil y ordenador.
+- Carrito y pedidos guardados en el almacenamiento local del navegador.
+
+## Importante: límites de esta entrega
+Es una versión funcional de demostración en un solo navegador. No tiene servidor ni base de datos compartida, cuentas reales, autenticación, pagos automáticos, cálculo de envíos, inventario sincronizado, ni envío de notificaciones. Los pedidos y comprobantes quedan en el navegador donde se registran. El panel permite cambiar estados, indicar fecha estimada y abrir WhatsApp para enviar una actualización al cliente. Si el cliente compra desde otro móvil, tú no recibirás ese pedido automáticamente.
+
+Antes de vender al público hay que conectar un backend seguro (por ejemplo Supabase), proteger el panel de administración, guardar archivos de comprobantes de forma segura, configurar políticas de privacidad y conectar los medios de pago que uses. No publiques datos bancarios hasta comprobar que el sitio está servido mediante HTTPS.
+
+## Personalizar el QR
+En `index.html`, busca:
+- `AQUÍ COLOCAR IMAGEN DEL QR`
+- `EDITAR NOMBRE DEL TITULAR`
+- `EDITAR NOMBRE DEL BANCO`
+- `EDITAR DATOS`
+
+El recuadro es un marcador. La imagen QR real debe insertarse reemplazando ese marcador por una etiqueta de imagen, por ejemplo:
+`<img src="qr-pago.png" alt="QR de pago" style="width:170px;height:170px;object-fit:contain">`
+Coloca `qr-pago.png` en la misma carpeta que `index.html`.
+
+## Personalizar productos
+Busca `const PRODUCTS = [` en el JavaScript. Cada producto contiene nombre, categoría, precio, tienda, descripción, stock y un emoji provisional. Reemplaza los datos de ejemplo por los reales.
+
+## Próxima fase necesaria
+Conectar autenticación, base de datos, almacenamiento de comprobantes, panel privado y pedidos multiusuario. No uses esta versión local como sistema de cobro real hasta completar esa fase.
+
+
+## Datos de contacto pendientes
+No se han añadido correo ni teléfono comercial porque todavía no han sido proporcionados en esta conversación.
+
+
+## Corrección del QR
+El QR BNB está incrustado dentro de index.html, por lo que ya no depende de un archivo de imagen separado. Copia el index.html corregido completo al proyecto o utiliza el ZIP completo.
